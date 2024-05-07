@@ -35,26 +35,26 @@ def index():
 # Code was taken from PyGoat: https://github.com/adeyosemanputra/pygoat/blob/master/introduction/views.py#L137
 # Modified for it to be called once a user hits the endpoint and provides data
 # @flaskapp.route('/sql-example')
-# def sql_lab(request):
-#     if request.user.is_authenticated:
+ def sql_lab(request):
+     if request.user.is_authenticated:
 
-#         name=request.POST.get('name')
+         name=request.POST.get('name')
 
-#         password=request.POST.get('pass')
+         password=request.POST.get('pass')
 
-#         if name:
+         if name:
 
-#             if login.objects.filter(user=name):
+             if login.objects.filter(user=name):
 
-#                 sql_query = "SELECT * FROM introduction_login WHERE user='"+name+"'AND password='"+password+"'"
-#                 print(sql_query)
-#                 try:
-#                     print("\nin try\n")
-#                     val=login.objects.raw(sql_query)
-#                 except:
-#                     print("\nin except\n")
-#                     return render(
-#                         request, 
+                 sql_query = "SELECT * FROM introduction_login WHERE user='"+name+"'AND password='"+password+"'"
+                 print(sql_query)
+                 try:
+                     print("\nin try\n")
+                     val=login.objects.raw(sql_query)
+                 except:
+                     print("\nin except\n")
+                     return render(
+                         request, 
 #                         'Lab/SQL/sql_lab.html',
 #                         {
 #                             "wrongpass":password,
